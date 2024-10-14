@@ -16,7 +16,8 @@
     "-e",
     "GIT_EDITOR=code --wait",
     "--security-opt",
-    "label=disable"
+    "label=disable",
+    "--name=homeassistant_dev"
   ],
   "customizations": {
     "vscode": {
@@ -28,7 +29,8 @@
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
         "GitHub.vscode-pull-request-github",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "spencerwmiles.vscode-task-buttons"
       ],
       // Please keep this file in sync with settings in home-assistant/.vscode/settings.default.json
       "settings": {
@@ -59,10 +61,12 @@
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff"
         },
-        "json.schemas": [
+        "VsCodeTaskButtons.showCounter": false,
+        "VsCodeTaskButtons.tasks": [
           {
-            "fileMatch": ["homeassistant/components/*/manifest.json"],
-            "url": "./script/json_schemas/manifest_schema.json"
+            "label": "homeassistant",
+            "task": "Run Home Assistant Core",
+            "tooltip": "Run Home Assistant Core"
           }
         ]
       }
